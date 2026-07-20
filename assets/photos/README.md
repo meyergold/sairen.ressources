@@ -1,13 +1,13 @@
 # Photos du cabinet
 
-Déposer ici les photos fournies par le Dr Zanin, avec les noms de fichiers suivants
-(le site les charge automatiquement ; tant qu'elles sont absentes, les emplacements
-sont masqués proprement) :
+Déposer ici les photos envoyées par le Dr Zanin (mail « Ophta-Méditerranée : site internet »),
+renommées comme suit. Le site les charge automatiquement ; tant qu'elles sont absentes,
+les emplacements sont masqués proprement.
 
-| Fichier | Photo attendue | Emplacement sur le site |
+| Fichier attendu ici | Fichier d'origine (pièce jointe du mail) | Emplacements sur le site |
 |---|---|---|
-| `facade.jpg` | Façade du bâtiment (Pôle Santé Nature) | Page d'accueil, à droite du titre |
-| `consultation.jpg` | Salle d'examen équipée (appareil NIDEK) | Section « Le cabinet » |
-| `equipe.jpg` | Photo de groupe de l'équipe dans le couloir | Section « L'équipe » |
+| `facade.jpg` | `Cabinet ophtamediterranee.jpeg` | Accueil (haut de page) · Le cabinet · Rendez-vous & accès |
+| `equipe.jpg` | `Equipe ophtamediterranée.jpeg` | Accueil · L'équipe |
+| `orthoptistes.jpg` | `Les orthoptistes.jpeg` | Accueil · Le cabinet · L'équipe · L'orthoptie |
 
-Format recommandé : JPEG, largeur 1600 px environ, poids < 400 Ko par image.
+Format recommandé : JPEG, largeur ~1600 px, poids < 400 Ko par image.
