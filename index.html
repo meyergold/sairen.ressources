@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ophta Méditerranée — Centre d'ophtalmologie et d'orthoptie · Les Pennes-Mirabeau</title>
+<meta name="description" content="Ophta Méditerranée, centre d'ophtalmologie et d'orthoptie au Pôle Santé Nature des Pennes-Mirabeau. Consultations, bilans visuels, suivi médical et chirurgical des maladies de l'œil. Rendez-vous en ligne sur Doctolib." />
+<link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blue:#155689;        /* couleur principale — modifiable */
+    --blue-dark:#0E3A5D;
+    --blue-pale:#EDF3F8;
+    --text:#26333C;
+    --muted:#5B6B75;
+    --bg:#FFFFFF;
+    --bg-alt:#F6F9FB;
+    --line:#E1E8ED;
+    --maxw:1100px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+    font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  a{color:var(--blue)}
+  h1,h2,h3{margin:0;line-height:1.2;color:var(--blue-dark);font-weight:700}
+  h1{font-size:clamp(30px,4.4vw,44px)}
+  h2{font-size:clamp(24px,3vw,32px)}
+  h3{font-size:19px}
+  p{margin:0}
+  img{max-width:100%;display:block}
+  .kicker{font-size:14px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+
+  /* ---------- header ---------- */
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:76px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--blue-dark)}
+  .brand .mark{width:44px;height:44px;flex:none;color:var(--blue-dark)}
+  .brand .name{font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase;line-height:1.15}
+  .brand .name small{display:block;font-weight:400;font-size:12px;letter-spacing:.02em;text-transform:none;color:var(--muted);white-space:nowrap}
+  nav.menu{display:flex;gap:26px}
+  nav.menu a{color:var(--text);text-decoration:none;font-weight:600;font-size:15.5px;white-space:nowrap}
+  nav.menu a:hover{color:var(--blue)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:6px;
+    font-weight:700;font-size:15.5px;text-decoration:none;border:1px solid transparent;line-height:1;white-space:nowrap;
+  }
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-primary:hover{background:var(--blue-dark)}
+  .btn-ghost{border-color:var(--blue);color:var(--blue);background:#fff}
+  .btn-ghost:hover{background:var(--blue-pale)}
+  @media (max-width:920px){
+    nav.menu{display:none}
+    .nav{height:68px}
+    .brand .name small{display:none}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--bg-alt);border-bottom:1px solid var(--line)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:64px 0}
+  .hero .place{font-weight:600;color:var(--blue);margin-bottom:14px;font-size:16px}
+  .hero p.lede{margin-top:18px;font-size:18px;color:var(--muted);max-width:56ch}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+  .hero-badges{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;font-size:15px;color:var(--muted)}
+  .hero-badges span{display:inline-flex;align-items:center;gap:8px}
+  .hero-badges svg{width:18px;height:18px;color:var(--blue);flex:none}
+  figure{margin:0}
+  figure.photo img{width:100%;height:100%;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+  figure.photo figcaption{font-size:13.5px;color:var(--muted);margin-top:8px}
+  .hero-grid figure.photo img{aspect-ratio:4/3}
+  @media (max-width:920px){
+    .hero-grid{grid-template-columns:1fr;gap:32px;padding:48px 0}
+  }
+
+  /* ---------- sections ---------- */
+  section.sec{padding:72px 0}
+  section.sec.alt{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .sec-head{max-width:70ch;margin-bottom:40px}
+  .sec-head p.intro{margin-top:14px;color:var(--muted);font-size:17.5px}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-bottom:48px}
+  @media (max-width:920px){.split{grid-template-columns:1fr;gap:28px}}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  @media (max-width:920px){.cards{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px}
+  .card h3{margin-bottom:6px}
+  .card .sub{color:var(--muted);font-size:15px;margin-bottom:14px}
+  .card ul{margin:0;padding:0;list-style:none}
+  .card li{padding:7px 0 7px 26px;position:relative;font-size:15.5px;border-top:1px solid var(--line)}
+  .card li:first-child{border-top:0}
+  .card li::before{
+    content:"";position:absolute;left:2px;top:14px;width:14px;height:14px;
+    background:no-repeat center/contain url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23155689" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>');
+  }
+
+  /* ---------- équipe ---------- */
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media (max-width:920px){.team-grid{grid-template-columns:1fr}}
+  .doc{display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px}
+  .doc .av{width:84px;height:84px;border-radius:50%;object-fit:cover;flex:none;border:1px solid var(--line)}
+  .doc .av.ph{display:grid;place-items:center;background:var(--blue-pale)}
+  .doc h3{font-size:18px}
+  .doc .role{color:var(--blue);font-weight:600;font-size:14.5px;margin:2px 0 8px}
+  .doc p{font-size:15px;color:var(--muted)}
+  .note{
+    display:flex;gap:12px;align-items:flex-start;margin-top:26px;padding:16px 18px;
+    background:var(--blue-pale);border:1px solid var(--line);border-radius:8px;font-size:15px;
+  }
+  .note svg{width:19px;height:19px;flex:none;color:var(--blue);margin-top:3px}
+
+  /* ---------- motifs ---------- */
+  .motifs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:920px){.motifs{grid-template-columns:1fr}}
+  .motif{
+    display:flex;align-items:center;gap:14px;padding:16px 18px;background:#fff;
+    border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--text);font-weight:600;
+  }
+  .motif:hover{border-color:var(--blue)}
+  .motif small{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
+  .motif .arr{margin-left:auto;color:var(--blue)}
+
+  /* ---------- infos ---------- */
+  .info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  @media (max-width:920px){.info-grid{grid-template-columns:1fr}}
+  .info-block{background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px}
+  .info-block .lbl{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .hours{list-style:none;margin:0;padding:0}
+  .hours li{display:flex;justify-content:space-between;gap:16px;padding:8px 0;border-top:1px solid var(--line);font-size:15.5px}
+  .hours li:first-child{border-top:0}
+  .hours .h{color:var(--muted)}
+  .pay{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .pay span{border:1px solid var(--line);border-radius:6px;padding:6px 12px;font-size:14px;background:var(--bg-alt)}
+
+  /* ---------- bande CTA ---------- */
+  .cta-band{background:var(--blue-dark);color:#fff;padding:56px 0;text-align:center}
+  .cta-band h2{color:#fff;margin-bottom:8px}
+  .cta-band p{color:rgba(255,255,255,.75);margin-bottom:26px}
+  .cta-band .btn-primary{background:#fff;color:var(--blue-dark)}
+  .cta-band .btn-primary:hover{background:var(--blue-pale)}
+
+  /* ---------- footer ---------- */
+  footer{background:#fff;padding:36px 0;font-size:14.5px;color:var(--muted)}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Ophta Méditerranée, accueil">
+      <!-- Logo du cabinet (reproduction vectorielle — couleur modifiable via CSS) -->
+      <svg class="mark" viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"><rect x="20" y="20" width="60" height="60" rx="16"/><rect x="20" y="20" width="60" height="60" rx="16" transform="rotate(45 50 50)"/><path d="M4 50 C18 33 33 26 50 26 C67 26 82 33 96 50 C82 67 67 74 50 74 C33 74 18 67 4 50 Z"/></g><circle cx="50" cy="50" r="12.5" fill="currentColor"/><g stroke="#fff" stroke-width="1.7" stroke-linecap="round"><line x1="54.50" y1="50.00" x2="59.80" y2="50.00"/><line x1="54.16" y1="51.72" x2="59.05" y2="53.75"/><line x1="53.18" y1="53.18" x2="56.93" y2="56.93"/><line x1="51.72" y1="54.16" x2="53.75" y2="59.05"/><line x1="50.00" y1="54.50" x2="50.00" y2="59.80"/><line x1="48.28" y1="54.16" x2="46.25" y2="59.05"/><line x1="46.82" y1="53.18" x2="43.07" y2="56.93"/><line x1="45.84" y1="51.72" x2="40.95" y2="53.75"/><line x1="45.50" y1="50.00" x2="40.20" y2="50.00"/><line x1="45.84" y1="48.28" x2="40.95" y2="46.25"/><line x1="46.82" y1="46.82" x2="43.07" y2="43.07"/><line x1="48.28" y1="45.84" x2="46.25" y2="40.95"/><line x1="50.00" y1="45.50" x2="50.00" y2="40.20"/><line x1="51.72" y1="45.84" x2="53.75" y2="40.95"/><line x1="53.18" y1="46.82" x2="56.93" y2="43.07"/><line x1="54.16" y1="48.28" x2="59.05" y2="46.25"/></g><circle cx="50" cy="45.6" r="4.4" fill="#fff"/><circle cx="50" cy="47.5" r="4.4" fill="currentColor"/></svg>
+      <span class="name">Ophta Méditerranée<small>Centre d'ophtalmologie et d'orthoptie</small></span>
+    </a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="#cabinet">Le cabinet</a>
+      <a href="#equipe">L'équipe</a>
+      <a href="#rdv">Consultations</a>
+      <a href="#infos">Infos pratiques</a>
+    </nav>
+    <a class="btn btn-primary" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener">Prendre rendez-vous</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ ACCUEIL ============ -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="place">Pôle Santé Nature · Les Pennes-Mirabeau</p>
+        <h1>Centre d'ophtalmologie et&nbsp;d'orthoptie</h1>
+        <p class="lede">L'équipe médicale d'Ophta Méditerranée vous accueille pour vos consultations d'ophtalmologie, vos bilans orthoptiques et le suivi médical et chirurgical des maladies de l'œil, chez l'adulte comme chez l'enfant.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener">Prendre rendez-vous en ligne</a>
+          <a class="btn btn-ghost" href="#infos">Nous trouver</a>
+        </div>
+        <div class="hero-badges">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Nouveaux patients acceptés</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Établissement conventionné</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg>Carte Vitale acceptée</span>
+        </div>
+      </div>
+      <figure class="photo">
+        <img src="assets/photos/facade.jpg" alt="La façade du Pôle Santé Nature aux Pennes-Mirabeau" loading="eager" onerror="this.closest('figure').style.display='none'" />
+        <figcaption>Le Pôle Santé Nature, 2277 Chemin de Velaux, Les Pennes-Mirabeau</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ============ LE CABINET ============ -->
+  <section class="sec" id="cabinet">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Le cabinet</p>
+        <h2>Une prise en charge complète de votre vision</h2>
+        <p class="intro">Ophta Méditerranée réunit au sein d'un même cabinet l'ophtalmologie médicale, l'orthoptie et la chirurgie ophtalmologique. Cette organisation permet une prise en charge coordonnée, du bilan visuel au suivi des pathologies oculaires, en limitant les déplacements et les délais.</p>
+      </div>
+
+      <div class="split">
+        <figure class="photo">
+          <img src="assets/photos/consultation.jpg" alt="Une salle d'examen du cabinet, équipée pour les bilans ophtalmologiques" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+          <figcaption>Une salle d'examen du cabinet</figcaption>
+        </figure>
+        <div>
+          <h3 style="margin-bottom:12px">Un plateau technique récent</h3>
+          <p style="color:var(--muted)">Le cabinet dispose d'équipements d'examen et de mesure permettant de réaliser sur place les bilans de la vue, le dépistage et le suivi des principales pathologies de l'œil : glaucome, cataracte, DMLA, rétinopathie diabétique, strabisme et troubles de la réfraction.</p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>Ophtalmologie</h3>
+          <p class="sub">Diagnostic et suivi médical de la vision</p>
+          <ul>
+            <li>Examen complet de la vue</li>
+            <li>Prescription de lunettes et de lentilles</li>
+            <li>Dépistage du glaucome, de la DMLA et de la cataracte</li>
+            <li>Suivi de la rétinopathie diabétique</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Orthoptie</h3>
+          <p class="sub">Rééducation et évaluation fonctionnelle</p>
+          <ul>
+            <li>Bilans orthoptiques complets</li>
+            <li>Rééducation visuelle et de la convergence</li>
+            <li>Prise en charge du strabisme</li>
+            <li>Contrôle de vue (patients du cabinet)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Chirurgie</h3>
+          <p class="sub">Prise en charge chirurgicale</p>
+          <ul>
+            <li>Chirurgie réfractive</li>
+            <li>Pathologies de la rétine et de la paupière</li>
+            <li>Consultations spécialisées</li>
+            <li>Suivi pré et post-opératoire</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ L'ÉQUIPE ============ -->
+  <section class="sec alt" id="equipe">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">L'équipe</p>
+        <h2>Les médecins qui vous reçoivent</h2>
+        <p class="intro">Une équipe de médecins ophtalmologues, entourée d'orthoptistes et de secrétaires médicales, assure vos consultations, vos bilans et votre suivi.</p>
+      </div>
+
+      <figure class="photo" style="margin-bottom:40px">
+        <img src="assets/photos/equipe.jpg" alt="L'équipe du cabinet Ophta Méditerranée" loading="lazy" onerror="this.closest('figure').style.display='none'" />
+        <figcaption>L'équipe d'Ophta Méditerranée au Pôle Santé Nature</figcaption>
+      </figure>
+
+      <div class="team-grid">
+        <div class="doc">
+          <span class="av ph" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#155689" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg>
+          </span>
+          <div>
+            <h3>Dr Corine Benso Layoun</h3>
+            <div class="role">Ophtalmologue</div>
+            <p>Consultations d'ophtalmologie générale et spécialisée au sein du cabinet.</p>
+          </div>
+        </div>
+
+        <div class="doc">
+          <img class="av" src="data:image/webp;base64,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" alt="Portrait du Dr Muriel Catanese-Pollet" loading="lazy" />
+          <div>
+            <h3>Dr Muriel Catanese-Pollet</h3>
+            <div class="role">Ophtalmologue</div>
+            <p>Prend en charge l'ensemble des maladies de l'œil, notamment les troubles de la réfraction, le strabisme, les troubles de la vision des couleurs, les glaucomes ainsi que les pathologies de la rétine et de la paupière.</p>
+          </div>
+        </div>
+
+        <div class="doc">
+          <span class="av ph" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#155689" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.6"/><path d="M5 20c.6-3.8 3.4-6 7-6s6.4 2.2 7 6"/></svg>
+          </span>
+          <div>
+            <h3>Dr Catherine Martinenq</h3>
+            <div class="role">Ophtalmologue</div>
+            <p>Consultations d'ophtalmologie générale et spécialisée au sein du cabinet.</p>
+          </div>
+        </div>
+
+        <div class="doc">
+          <img class="av" src="data:image/webp;base64,UklGRqwYAABXRUJQVlA4IKAYAADQpACdASoUARQBPnk2mEikoqKiJzGLoJAPCWVujcA+rA3OjeT/peef1o7qEuws7G3qZVaa3MAZ3DziVxYNob/O33DuhviroUwNhVdVoWDrTjGlyzL1aIhOR08P3VLrVtUgjxCz2PcoVVfnXzH5ox5ccUhl6Pra2TCCwXwMqKqKPVGf3Aj852T91aDZnq4t2rkaBECgm7ipHwzEuCfDKXWNxGQsPhusVBie8wwmEgKy2eL2b7vut56AJ40EdWt2p4G/+Ql2MLdS67yumloeu0hSO8cmj8hgdI+iy6B94Rp7pWjOZnhQxnRTc6B3zffUElUwebmJfVLbc4e7zbtXVHl+CLX+R7LpZjSayWkFVv8n6X2R8kv/s6PVAzcpZrgQyO9ohvgxIdvfmGPmRRrCLicyPVl3AiYVOdxC3Qxg/Xc7pczyl4ca+nmQg49wjDQBRtc9l5rXaDMh2Qbz4bAXHw6PBF7iImDaFbzBuKrK+NT9Qw6nzAca9FBHemXaIv7WMCBDCYlRPG/zvwl3I+dKJgnicFVzH7aCTKE1R7+BMzcBRxFTnBd7RMMVZfjdqD7X6zgMzhMKwAK93xC2n6xfEbV3u1qXXRh629ZSAybQbCZumtoUOrcx/vUaAN9bCdNPacXm/FAbdwHcGOBHeizZmiQhRQlM+vPl8dCHFld/w7Fittg9BbEZV2WuiZAq0COWHtINadvxwm5pB56RJOSqlxee51wxJWdqp+4QMun2p1y98JA4DEjsRVNHOqsDr6Wp8Ho7ZMvi4OuuKOAj4QdJHIPJAfaT1O4AgTPdgq+nv22k4xBRdeIJmq2zRNcQnCavu0Soi5YLkdtUYm6pEOtOYx7BAAeDFxFL8ojNrkL3l8WV4SgYHnslHOXz+4vX63ga9lMlhKxx8JLFG/d28vfT7Y441cGlK198CPKe/6OCAHwQ4+v1DS8VGcLSt1laLpYmb2aXTA0JGsGPf6HL124wvYCcfqgM9/3mqjo+ZmoAc90DAyLL1panacHaSd974nK+J4HaEcs+1f/pfV42RLnQy/ovAM3fGCGlkh5ulJ/yd8Teyr14GtbxmBVr07oXdyps8MNGyHcnkqEKcbIQct4Bu22PkLnrweWDCnJcDF3SC9eR5d5MUHfEhnZUECyTtb5EHQ9DnfZlXVtteCKgUqgZxoT0qvK923zHbgabOrd6LSnN8+8/bydfh3EZQpgPcT/A/P4WvemL+8/Kl1p2Y68tIZypqTFOOTaIamX+AMuDoT/hpG48nFtrrsA1cgi5S6kwcVlGvyefv9cPWvJzTIhB7/plXazpkM5q5ozHudHmNKJt7FAEt91PwMB+xtXeOGMMW1Htmsw4uWJ1wDnwPlLods09NbgK1hESBO6hgxCkWIDah0oXFvLG73KaJ3te77zUzC/5iMLf1ut9rl7HO9omK6ypb6KoLEycQNb4bIXIi75nrLM0ui/erRlpayR80Zf/bzG5k8+WohmBl0EVPg4xnDuyB+afXbWNVOrFmn3pMtCqGjhu0ieu+vGwMXU6pjxOewVuV4kk1wKTB6uZSRDcbpbJRUnrKkm2qb+KTrD3OJ3t1Dtz8T79mkRYtQTiqjYw5ksXOH0z2cGO4d0DF+x7YlBtO6zStvyZIqjWkSNs2wZG5NOaQeZfnZJbKQP4Lr1DV/KtkEGWCkevAk9bJxLTaLw3zbUPKoGPljq41gBQlV1Ao2u6rV++HHmtFXHBdTZRIsZfWzkTp9CxkK1nQ8K0Mk5Gg3LSKglbGcP5PbuNQWIAAP6aZB5V4EQbahg/8Q8oDZgjtpb3I0NNFSz3J+UsELsHCbOM2lnv8cLauFruLc4cXJxa9pXL0bOphKSk8baAtjj46vS3iXStZ6jpE60o+dmOyZk+ywradMccHyUCmDGFsjReJ1BgWmQ7wjLPSFigQrPpl+TK5zf26YDCXIANkRtOwlejRZ6N1gfBr8d7hpXgGqv1TRAqy1TDL0zmq7Mtk/1fEmusrdGahAvMkQpsl+MZZyoU5vW/KzU1GqiBEiQBKaXle1rJpXuDAgI+75pf7TYudndnvuRXfGtjFP/oOgArMDDqPNZqEhqOEi4ucUmOvexafmPi2nFKRq2pcoYeRIKKFtIUsL/qkZ6keQ9mXamPd3YjrUMg15TI6NEUgVUjKkUNTIDP3mIkt0ISJtsPNhB7jMpo3hHopiyCT97+JykMPgUglaKcRRWHT888hfCZC2eIAu2C0covElrUatqfDGMdC4SVtSMCHaT/0BD6AAHdYJvIDNTI+tUZfbXm8MLIziCo0Dd9uR5qP/+CkFxAEiZD3JRhXb2r1dl+2KaDjlTVW0gWbOSF9MsCBVxL1xIp5pbnrqiXnBsm3Bq6ArQ74qu9Ez0PpBXKVp9XOMAefuWHcgQO5GM2EwMP3E+cpFJAk0p9AsULFhlABzLxEpuFuqt1RhD3c27fntWWB6cMfuF2fvNO6/ywWp6vSWWy/axO7+8Y5Pk2HmuPw10rjXq8wy68aPSlNhet9BZ4aYBALa8OsQjBg6v/HJm2z9SOuJfRlwIx82PxdVCwrPA3JUUaTkntRR9fkkqRqaeUn3vzMdykBHzfWgDxV0fuaR9yQLt2LUbWkb43k6HYb+pvYNi9lW/lxD+VtR4xAbMGxBEdipw9zMLwtSF4cjtONWbkOsUvyPoQrkuT2SIFvqY57oMD0ygPuvC/XsUkTjg8oRqnPlWzE4YClOtX1u+LsAjEtNRuozzpDkSLJNdU4mGSqTECmVUWlGZrMKb9Xcc+dHN2FZYhuWddwBSqAx0SiIaX42/qqf3T8D7r1yoouJAaFD5bBUuxgcjHaRqDV4xgEfFQ/WDPrFY6WONWa/W9cjATHzZbZEDoAGZCJN7EPMMXpbX8UMGpuUBNt0zJRTVyU4GwuGi32en/2NiIbD6WtEeFMLDTZxXw632b87kTslopZpEXGOLCLI5UrXIHMXZGnCcQGkuB00uvrhwTRo5mAdsaSHw2BvOO//JQJAO5AO9wrfD9u02KKaZ2CQLLJG3rlLROj7hTmCyaDAtmApIb12LzmaZbJqk5+5GBkCcXddur4MX1hsVCRID6tcWJSbLiwJTgEKxYmlNmk0lRMSQnA1PWeHrdl4vScA0UajUEqAkq1P3eSPZcJLXLBL+YvxZS/3YfLYPLiEnsxl79akbAuVfxGvCtL1VHyWKjcduKYexgcHG1hKbrIDxNTYMtHt0o1RAJjWiUGMT91acOutLiipGEn7GA4Hb0nUgfhEAaopcWkxg2i+8hKkZXU4zy1BOhy3dldVZIu2XmRyV/44bBLBrL6Md/wLAZdUNgy9jQZez/ah3weYNDFnmK47AGNF/l7iS33Q1zY1B8wIw/Iad1cyKmANRiBXGLRhh7BWcdfPPrrlAdxHmBrMYlarNnUB8vjf8lrjuwnqkUS6wPqRoqaZgwxAFlcxsXepz7gyCg9/UlXV80QeBiI2t0iNLB1btUiNO52WbGRvXeAz/foMg5hXPmEThGH1P63L7kRMzzAn4aqtYd949WpwdEDzeRre82GDZMVOCXwgY1jc5Ben3jCM3wxwY1cawOzgDQODI8V5Sgg1UxLXnCKaZ7T5tEJynicMNG5NayXXWj+8PWzQdcvnnKWUUxNrYqSjTdwKGJu+tsmgRWqbTgvOjOvgK0quNhiNN4IYOUFLQ1tyxOPpTQIeDUgHE06UumNjXW4lb9qvpW8+wC5DzyCLuKmlUU4t2paUyqp1t4A91ZiZKqeo/9x2pxCR1JsBpEisG0kYopK9bzMeSoGurwIJaaapuqW05xwBpWuKDwrOzoxEu2Ag4KClvkYRWv6/u4M7gW65QMUz11um6nJvfHJOuBZJYHfdzhuq1ZMzbZGkXsIhn1DDCzpcS77hJUJS5KiRvweIhx/87vccg8m3gXzXR/D97rpvrOMB9sCQDsbtyXH70VBmD+jn4ajfA4/maLoxM+sAic+LRCKd2SE7B5vpcv9f5xOX6Sd60Q8s23twzxG5W8eZ0Ws1gynNJ+L46nE7WIjFrCfHo66bG6pzy/VvXjZGF14YyCjJrhpkx3KiWverrJdS7yIAL9ePoyGMCLsEP+GPJEda7CYWDGrjd2I2MchOKGlIgZB0wfataOKzWK0+CFSgVQRahGvp1/dDyfTFeQ3ElwFKKUnay2VHDad9B4LHD9w+4FF98Eo+aX+JUhFBbyievxe0yPOHXTaCemYermAcP6q1koWXd+R7VkrU0RZQp039L624JCmEka8m+4hH2obrEnyRAf3shv7GVMTmuuQh/15F1vezxSTZaI6LSRwvjACgGsAf/QnnonYaRfGiiFaIwK4d5yaBe+bSf22ckTMgjhh7I1syQADNejmTW8jFvhy4vQyeZ7GC5BSMP3FbsZZfWcSN4JcMeph89NYcJuOm6IgGZsPy26l7pET2mRD0p1DidIA521pRiQEXYtITkdX23P9WgN1HTzriQ4yeZBVD6nQx6PJzwYyQKALkGeA2opHKtHO46KFQihjfMojRu9l15ng2MaMboEyNJCBsvxmv3qH1kFkvZjVooOVVtZqyGwEbNmL1UG9eeHCNRtFlicgS/BWv/9BC+WMIQoSd9jGbuFB8Qn5UvaLbb1sO/h2VhMg2EyjOVEpAM1vkjSS++iozwh207XQw1PWxWFCUc2/jfMURFxBZQoYD80v9KlwuvlT3IzWn3i1qIG74jedfD25Vfm5jNAB0VXHysUb9EUFYeud2QBM7hrcVdkW1j8yYK8cc6W9P5vXCKMhBVd8JfWVUNGbHCmZ+2Mru+pbtl6DjRnuCCMpR7KmvaiikruCmof9PBhEikpR4WXvP5UjNvVi9B4EKZnnxdRy3La8r5EeTJPWDghUEXIxDDENNUh5gow6X2GCv1+P14fVmLOB6XH6KrQtIPRsBjg0DCBbNlwV2KSvIkg3Hjo5VznaoufWmtmFouwwHaZlaRsn6mO23V5hPKdjRNsacvjBSvnyS1Oit8NgUrBRyIv6PSYpAMOgpMZUUftGH/pqJK+TU0invIO6+3tRQu0pAoxUHcqLWdjuZSm0hn9Do8CTa+xpiE0vzt3jDzVFRp/bRlklWP6BflO6OLkB2UB504hJF+WU5fubfF12yLALbl/CnBvbPDIhv5cJT4MNfYh4VqVW3lSh2Kc5B0fz9+wZvNJ3X7oE+VYVfr9xWYhwfzQp1K7+onyXK6Uo4BXi7BA4bKO8ztBNXPg71nE6aMKU25/7iS6IGM/p+CA2RfdYz+E/dlIjeJCtbFgNR4piEiNJQSm1n2nltX5q0ARp0vsqS69W3ksYe8eG8ssvZG37uGozP3wytCd8sDKegbLY7KN+02V+Ln8s/pHZgp2gUnZAWmaV/7UyiPTSE8LKk4Jynub3qsTZ+5l3B5G50CJMI754NPP6Wfx+osq0ysRg6PC3ogZni47kis0a5/q5rmlLFHHN9E777h6AvwKwlNPFz29VnkV3TGXPpgXFGELxz1DrzCwomE+X6F4UBDJDx8SrqA6H+6/u5NIacjIRwqZgbDhcpWMMOu3ApPmdPhDAhrcgSO+Zg4yApfm6dvvpq8RfDBKACAv8j2GjZ/yET1shhMWqkxxN7Sq7vRUI9oIOs1EzSHx48YoqGnBbFefdJJwL1Oz6OZstgZ+IedZKM2OnZbfaIuMswYBeGDmu/hXyJkiGBM+GYEj5QO9SsZIvC5juWCVidWyp7ZhWH1dYoGsfglm1J7NEuGrPFIWSY4hO99RFgtBQhfgtUIsM/GHG0AELtZ1RbwVQMZTuRZg89CUSkYVzALZXYUOi3mR73T1es5PXtP3VdDbCs0r05N4a1FsiU3w71NcPWOQeicVP+mdYveIecnXiZ9FXScJfuevDTMT9lfla/esGoT2ptWJ2sUJSP7da++Rc2b/EbCDmWeL2spNGvskVBw99L1ASydN6mc4jXfDVT2rCa3Hl3dc87/1W3d86YLtJ+yEtSPYRwWJe49lasjXIw5vciUXQcix9bnRL4nLyLQjn9PyOalvpUPqxOQvywsbGSTmqXxcFXwSFFKOF+aE9VIJOeAFj/a7v9EK1za04bR2c9PF1Rqsx9KLo6Z+t/+no2Gf4lDLlTgLCegcxSj5wnw9lEuJg7G+etHlIvvArNPv+X74ZdK6XIFIbH410F8ms0siEVnbOiQK014RxUu9lyVPRww3qwpirEE4bjxhWrrgOJTVj6q6vZ7UG8z8IyXCuG6RRcA6RukHidLmbXQBcZ753I6ainTBRW6kPXJiVt/GfS/JNW4UyLs1d7waS7PQ23U7jGqyvK/ZDghyDhX7I7HOFglsWXiqzOCPW6QVAQriBdKRmK0Zu8nLCaWeW79iWZ9tA0wLTrKdbSUjyfjQFaaJdClG/uyOSGxQ8mWRWK9uApCk92pAmZ3crcE8FpEXI6EqV+ra9ISKyktSjNh0BhpGeQuPcwJaYp2B5R2ylZPuo8qqH1TTm4IFu5FuWXh76/YMlbnfe8KTW6GH44yHZi+88nDx+SD7wxjJh8vkaRbH2G806pUll8pGB4C/0/Qe2Y3VvLz0uPV3rnOqn/FBmZMxwVT8ZKjz9lKNQyZNPcbZ34oCzy34lSSRTiSwdh7XUxoShcez3xFayjDALHTwSeaSzW+lItPyTSZDopkWlXdf7WasNIlwg6CGJlT/U1vrHp7bzV8KDwnt8txwqWcUz3gJC4L8NpRWKutwTSMbkpkazgcEs+Q2o653xd4q/cEcGeqMiOEP+09ZU5Q0oIfVisverQiueYwjnMQNrNnQ8RnRrcptAffKUrVsE9XmmEWdarirLJPGFg2CHkkCFqgbB+3r3DGycf32OC9PltMEJWqTuiTl6lZvHbBchhysUnFwWBdwFt91iqh2pZwy03+FyfC5MK7S8Af/EJbxjQrpBBx/VCo94whP037DH2Nu81lpDMWYefKfAg1wu1LzhKZwZVaNfezXQa6DVdcDW05wRlEAKhFsji2Ov8AdFWdnQvC7DPk3iCpWFETqVOhhMWU3SHcbeOOKO9Zp16tMr7AieCWldIELRtIowM0h//+diSwg+TF9mihMTrZvrjxDeIB6xVhZ2VBRIfOODCWZDlt/66qQ/vcZxNbwHIAUY5wljlStvobgV5Ip9YRmX4aKsjRDQlLrMUhCEjHteal5TyE+N279f/45y7WCjaybNXWQuhP0oJYEJ0JPYRynb7GgW/DP+P7qtmMYmlgvsyarNsac3Kukt7jVbGz7TP7jMsLiJkMMWaOKQ6nAqpsQVP2/NvG9U+r8L+vS+5C6UENL0GWTOYElHAX1xIiGCCTtu96uXpeRPPPqXsLlmP/rfMMojWTQ4X8lBN7aTUb0nvYhbgaxrpksXX8FxN0sOhEuIzdhUfBVvlSCcYxkjAKvGZ1xwMBvl3bP8Z4tUqnW+EybDRD5SClK+Sf4IdHdhxhIpjXikFa6jJtR+/YiakNME9gCHtlK5cXUdDMH5jdT0nl9S6dGUEhIbW2H1kqJ85xEa2LVAU5EngoJoaoKQmSPbZJxduDpRr7Oqo0jx1dgJiMkoRCj3phAxkMUzl7N94d3lYDRAZvgbA3W1dpgX/MK/xBzzWdWTP1jud9KxCH8hGy/yiDYP8dA3k4WDoJGjlzdBNEjZ7o1jm4IWoRgavCDBbXRMTnVk/+maXYpsxpjbIw7tiP6Zf9Ds9/qyaV74YPVLJFpU+jdwvueZ14g6U8Bspex466XZSzGjMGbqcLyHM01LyLeHerf1grL8V3vw+Ry6UDIiQ52LdFAH6JZeGcSkj0JRE+VLkfDS0Y0m5ZmQyLlkVvteo/cn7VzASyc2THl++7A839NY/jiQwSsNYNey026cKSPa+6QmCowDeSU5IIbwRHW3XG9rlwILAlBwj/VfqcZ1jOy51NJlOj5dxHQRLfweXqvWnwk1Xvl9sBhK/vc3URraFiYZMIdLNETmT0cEfGEcfWUsdB0j4UOCwXThSs6JO1EK4yAr+pO7oVTgeeC9gyjPjT2V5/jw/9UBMogLFT67G/kMSlguS8lWvhPJlCgArMr6+/vBKBomdVE7y7PVOdXvjtvc0Z/Lqvx7DEwFwUGYkSQQE1DVoBIey/VHEGTg3BqlV35pEgaI0M0zdlVCdxikEg2FOFjuN5fb48CqWLLsOZqusyGPILhcVGCLGJ9GKPToB7iYP/YiY0h/9QjrYKrm3ANIGZoBquf32q+DVfWErZOvs4CbNEcie9axzAAgwj0GIqaJ22Ds+hNXrcXbCkiI4OzD3EBGEqo492xsYGjJSDJy2eoXvru+OkHQxiwbNjzLPH4qpm8Ii/qTlpnFQHYkwkkCr2R9PMAV2DYZeBgWFhgua4CYkpbBDuOd9vseSGTsqOsUPxqoEXJ6BAtsBZB06nM1buQJBBhM9OPKGV/z7WfLvDfAMlvstHjLRLJSAAA" alt="Portrait du Dr Emilie Zanin" loading="lazy" />
+          <div>
+            <h3>Dr Emilie Zanin</h3>
+            <div class="role">Chirurgien ophtalmologue</div>
+            <p>Assure la prise en charge chirurgicale des maladies de l'œil, notamment la chirurgie réfractive, ainsi que les consultations pré et post-opératoires.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+        <div>Le renouvellement de lunettes et le contrôle de vue par l'orthoptiste sont réservés aux patients déjà suivis au cabinet.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONSULTATIONS / RDV ============ -->
+  <section class="sec" id="rdv">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Consultations</p>
+        <h2>Prendre rendez-vous</h2>
+        <p class="intro">La prise de rendez-vous se fait en ligne sur Doctolib, 24h/24. Sélectionnez le motif de consultation correspondant à votre besoin.</p>
+      </div>
+
+      <div class="motifs">
+        <a class="motif" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener"><span>Consultation d'ophtalmologie</span><span class="arr">→</span></a>
+        <a class="motif" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener"><span>Consultation de suivi</span><span class="arr">→</span></a>
+        <a class="motif" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener"><span>Première consultation</span><span class="arr">→</span></a>
+        <a class="motif" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener"><span>Urgence</span><span class="arr">→</span></a>
+        <a class="motif" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener"><span>Chirurgie réfractive<small>Première consultation</small></span><span class="arr">→</span></a>
+        <a class="motif" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener"><span>Renouvellement de lunettes<small>Contrôle de vue par l'orthoptiste — patients du cabinet</small></span><span class="arr">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INFOS PRATIQUES ============ -->
+  <section class="sec alt" id="infos">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Infos pratiques</p>
+        <h2>Nous trouver et nous contacter</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-block">
+          <div class="lbl">Adresse</div>
+          <h3>Pôle Santé Nature</h3>
+          <p style="margin-top:8px">2277 Chemin de Velaux<br>13170 Les Pennes-Mirabeau</p>
+          <p style="margin-top:14px"><a href="https://maps.google.com/?q=2277+Chemin+de+Velaux+13170+Les+Pennes-Mirabeau" target="_blank" rel="noopener">Itinéraire sur Google Maps →</a></p>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Horaires</div>
+          <ul class="hours">
+            <li><span>Lundi – Vendredi</span><span class="h">09h00 – 13h00 · 14h00 – 18h00</span></li>
+            <li><span>Samedi – Dimanche</span><span class="h">Fermé</span></li>
+          </ul>
+          <p style="margin-top:14px;font-size:14px;color:var(--muted)">Horaires donnés à titre indicatif — disponibilités à jour sur Doctolib.</p>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Tarifs et remboursement</div>
+          <h3>Établissement conventionné</h3>
+          <p style="margin-top:8px">Carte Vitale acceptée. Pensez à vous munir de votre carte de mutuelle et de votre prescription médicale le jour du rendez-vous.</p>
+        </div>
+        <div class="info-block">
+          <div class="lbl">Moyens de paiement</div>
+          <h3>Règlement sur place</h3>
+          <div class="pay"><span>Cartes bancaires</span><span>Chèques</span><span>Espèces</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <div class="wrap">
+      <h2>Prendre rendez-vous en ligne</h2>
+      <p>Réservez votre consultation sur Doctolib, 24h/24.</p>
+      <a class="btn btn-primary" href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener">Prendre rendez-vous</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><strong style="color:var(--blue-dark)">Ophta Méditerranée</strong> — Centre d'ophtalmologie et d'orthoptie<br>Pôle Santé Nature, 2277 Chemin de Velaux, 13170 Les Pennes-Mirabeau</div>
+      <div><a href="https://www.doctolib.fr/centre-d-ophtalmologie/cabries/ophta-mediterannee" target="_blank" rel="noopener">Rendez-vous sur Doctolib</a> · <a href="https://www.doctolib.fr/patient_support_requests/new?preselect=reclamation" target="_blank" rel="noopener">Centre d'aide Doctolib</a></div>
+    </div>
+    <p style="margin-top:18px;font-size:13.5px">© <span id="yr"></span> Ophta Méditerranée. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
