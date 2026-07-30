@@ -60,7 +60,7 @@ img{max-width:100%;display:block}
 .topbar{background:#fff;border-bottom:1px solid var(--line)}
 .topbar-in{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px}
 .brand{display:flex;align-items:center;gap:15px;text-decoration:none;color:var(--blue-deep)}
-.brand .mark{width:54px;height:54px;flex:none;color:var(--blue-deep);transition:transform .3s}
+.brand .mark{width:54px;height:54px;flex:none;object-fit:contain;transition:transform .3s}
 .brand:hover .mark{transform:scale(1.05)}
 .brand .name{font-family:var(--serif);font-weight:600;font-size:21px;letter-spacing:.08em;text-transform:uppercase;line-height:1.15}
 .brand .name small{display:block;font-family:var(--sans);font-weight:400;font-size:12.5px;letter-spacing:.04em;text-transform:none;color:var(--muted);white-space:nowrap;margin-top:3px}
@@ -121,7 +121,7 @@ img{max-width:100%;display:block}
 .page-hero::after{
   content:"";position:absolute;right:-70px;top:50%;transform:translateY(-50%);
   width:340px;height:340px;opacity:.07;pointer-events:none;
-  background:url("logo.svg") no-repeat center/contain;
+  background:url("logo-mark.png") no-repeat center/contain;
 }
 .page-hero .wrap{position:relative;z-index:1}
 .page-hero h1{max-width:20ch}
@@ -149,7 +149,7 @@ section.sec.alt{background:var(--bg-alt);border-top:1px solid var(--line);border
 .grid2.center{align-items:center}
 @media (max-width:920px){.grid2{grid-template-columns:1fr;gap:30px}}
 figure{margin:0}
-figure.photo img{width:100%;object-fit:cover;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow-m)}
+figure.photo img{width:100%;max-height:620px;object-fit:cover;object-position:center 30%;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow-m)}
 figure.photo figcaption{font-size:13.5px;color:var(--muted);margin-top:10px}
 
 /* questions / réponses */
@@ -255,7 +255,7 @@ a.card:hover .more{text-decoration:underline}
 }
 .hero::after{
   content:"";position:absolute;right:-90px;bottom:-110px;width:460px;height:460px;opacity:.06;pointer-events:none;
-  background:url("logo.svg") no-repeat center/contain;
+  background:url("logo-mark.png") no-repeat center/contain;
 }
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:84px 0}
 .hero .place{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--blue);margin-bottom:20px;font-size:14.5px;
@@ -278,8 +278,8 @@ a.card:hover .more{text-decoration:underline}
 }
 .cta-band::after{
   content:"";position:absolute;left:-80px;top:50%;transform:translateY(-50%);
-  width:380px;height:380px;opacity:.08;pointer-events:none;filter:invert(1);
-  background:url("logo.svg") no-repeat center/contain;
+  width:380px;height:380px;opacity:.10;pointer-events:none;
+  background:url("logo-mark-white.png") no-repeat center/contain;
 }
 .cta-band .wrap{position:relative;z-index:1}
 .cta-band h2{color:#fff;margin-bottom:10px}
